@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>BloggerSystem</servlet-name>
+        <servlet-class>BloggerSystem.BloggerSystem</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BloggerSystem</servlet-name>
+        <url-pattern>/BloggerSystem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClickedPost</servlet-name>
+        <servlet-class>BloggerSystem.ClickedPost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClickedPost</servlet-name>
+        <url-pattern>/ClickedPost</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddComment</servlet-name>
+        <servlet-class>BloggerSystem.AddComment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddComment</servlet-name>
+        <url-pattern>/AddComment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editPost</servlet-name>
+        <servlet-class>BloggerSystem.editPost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>editPost</servlet-name>
+        <url-pattern>/newpost/edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>UpdatePost</servlet-name>
+    <servlet-class>BloggerSystem.UpdatePost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatePost</servlet-name>
+        <url-pattern>/newpost/UpdatePost</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Approval</servlet-name>
+        <servlet-class>BloggerSystem.Approval</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Approval</servlet-name>
+        <url-pattern>/newpost/Approval</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>approved</servlet-name>
+        <servlet-class>BloggerSystem.approved</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>approved</servlet-name>
+        <url-pattern>/newpost/approved</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>PendingComments</servlet-name>
+    <servlet-class>BloggerSystem.PendingComments</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>PendingComments</servlet-name>
+        <url-pattern>/PendingComments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>newpost</servlet-name>
+        <servlet-class>BloggerSystem.newpost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newpost</servlet-name>
+        <url-pattern>/newpost</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>commentsApproval</servlet-name>
+        <servlet-class>BloggerSystem.commentsApproval</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>commentsApproval</servlet-name>
+        <url-pattern>/newpost/commentsApproval</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>statistics</servlet-name>
+        <servlet-class>BloggerSystem.statistics</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>statistics</servlet-name>
+        <url-pattern>/statistics</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>statPost</servlet-name>
+        <servlet-class>BloggerSystem.statPost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>statPost</servlet-name>
+        <url-pattern>/statPost</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>RegUser</web-resource-name>
+            <url-pattern>/newpost/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+
+        <auth-constraint>
+            <role-name>tomcat</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <security-role>
+        <role-name>tomcat</role-name>
+    </security-role>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/login_failed.html</form-error-page>
+        </form-login-config>
+    </login-config>
+
+
+</web-app>

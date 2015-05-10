@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="gson-1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/gson-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-lib-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-rpc-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-simple-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
